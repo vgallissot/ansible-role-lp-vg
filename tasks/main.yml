@@ -1,0 +1,24 @@
+---
+
+#- name: install zsh and dependencies
+#  become: yes
+#  include_tasks: "os_family/{{ ansible_os_family }}.yml"
+
+- name: "Git clone repo to {{ lp_vg_path }}"
+  git:
+    repo: https://github.com/vgallissot/lp-vg.git
+    dest: "{{ lp_vg_path }}"
+
+# Assuming liquidprompt is already installed
+- name: "replace repo's generic values by role's pref"
+  replace:
+    path: "{{ lp_vg_path }}/liquidpromptrc"
+    regexp: '^(.*)/usr/local/src/lp-vg/(.*)$'
+    replace: "\\1{{ lp_vg_path }}/\\2"
+  when: "lp_vg_path != '/usr/local/src/lp-vg'"
+
+- name: "link /etc/liquidpromptrc to {{ lp_vg_path }}"
+  file:
+    src: "{{ lp_vg_path }}/liquidpromptrc"
+    dest: /etc/liquidpromptrc
+    state: link
