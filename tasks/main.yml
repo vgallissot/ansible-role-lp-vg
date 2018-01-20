@@ -1,13 +1,10 @@
 ---
 
-#- name: install zsh and dependencies
-#  become: yes
-#  include_tasks: "os_family/{{ ansible_os_family }}.yml"
-
 - name: "Git clone repo to {{ lp_vg_path }}"
   git:
     repo: https://github.com/vgallissot/lp-vg.git
     dest: "{{ lp_vg_path }}"
+    update: no # needed for idempotency if files are modified by next task
 
 # Assuming liquidprompt is already installed
 - name: "replace repo's generic values by role's pref"

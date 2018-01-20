@@ -3,5 +3,8 @@
 - hosts: localhost
   remote_user: root
 
+  vars:
+    lp_vg_path: /usr/local/src/liquid-prompt-custom-theme
+
   roles:
     - ansible-role-lp-vg
