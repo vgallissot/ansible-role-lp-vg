@@ -1,9 +1,7 @@
 galaxy_info:
   author: Vincent Gallissot
-  description: Clone custom liquidprompt theme for all users. Can be specified to a single user by modifying liquidpromptrc path
-
+  description: Clone vgallissot/lp-vg.git and copy files to accurate destination
   license: BSD
-
   min_ansible_version: 2.0
 
   platforms:
@@ -30,6 +28,4 @@ galaxy_info:
     - all
 
 dependencies: []
-  # List your role dependencies here, one per line.
-  # Be sure to remove the '[]' above if you add dependencies
-  # to this list.
+  # This role can be used alonside https://github.com/sbani/ansible-role-liquidprompt
