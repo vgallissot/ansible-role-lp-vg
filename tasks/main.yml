@@ -1,0 +1,12 @@
+---
+
+- name: git clone lp-vg
+  git:
+    repo: https://github.com/vgallissot/lp-vg.git
+    dest: "{{ lp_vg_path }}"
+
+- name: "link {{ lp_vg_lprc }} to {{ lp_vg_path }}"
+  file:
+    src: "{{ lp_vg_path }}/liquidpromptrc"
+    dest: "{{ lp_vg_lprc }}"
+    state: link
