@@ -2,3 +2,8 @@
 
 lp_vg_path: /usr/local/src/lp-vg
 lp_vg_lprc: /etc/liquidpromptrc
+lp_vg_packages:
+  - git
+  - mercurial
+  - svn
+  - hostname # needed by lp else hostname cannot be chown on PS1

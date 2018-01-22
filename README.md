@@ -14,5 +14,4 @@ Role Variables
 | :---- |:--------:|:----------:|:------------ |
 | lp_vg_path | `/usr/local/src/lp-vg` | yes | Path where git repo will be cloned to |
 | lp_vg_lprc | `/etc/liquidpromptrc` | yes | Path to symbolic link for liquidpromptrc in repo. This path must be one that liquidprompt loads in its startup process. |
-
-
+| lp_vg_packages | `[git, mercurial, svn, hostname]` | yes | List of packages needed by this liquidprompt theme |
